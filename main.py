@@ -16,9 +16,10 @@ content = request.json()
 
 #  the article title and description
 body = ""
-for article in content["articles"]:
+for article in content["articles"][:20]:
     if article["title"] is not None:
-        body = body + article["title"] + "\n" \
+        body = "Subject: Today's News" \
+               + "\n"+ body + article["title"] + "\n" \
                +article["description"] \
                +"\n"+article["url"] + 2*"\n"
 
